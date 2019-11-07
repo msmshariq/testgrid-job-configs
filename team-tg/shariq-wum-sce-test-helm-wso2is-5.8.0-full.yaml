@@ -1,0 +1,49 @@
+# A testGrid Job
+version: '0.9'
+emailToList: "shariq@wso2.com"
+infrastructureConfig:
+  iacProvider: KUBERNETES
+  infrastructureProvider: GKE
+  containerOrchestrationEngine: None
+  includes:
+    - CentOS-7.5
+    - Postgres-9.4
+    - ADOPT_OPEN_JDK8
+  provisioners:
+    - name: kubernetes woring environment
+      description: Provision Infra for running intg tests
+      remoteRepository: "git@github.com:edussuriyac/wso2_testgrid_kubernetes.git"
+      scripts:
+        - name: 'Test-Phase-1-Deployment'
+          description: ''
+          type: HELM
+          phase: CREATE
+deploymentConfig:
+  deploymentPatterns:
+    - name: 'deployment'
+      remoteRepository: "git@github.com:NishikaDeSilva/wso2_testgrid_kubernetes.git"
+      description: 'deployment of the resources in the gke'
+      scripts:
+        - name: 'deploy1'
+          type: SHELL
+          file: deploymentRepository/helm_is.sh
+        - name: 'deploy'
+          type: HELM
+          inputParameters:
+            helmDeployScript: 'deploymentRepository/wso2_helm_is.sh'
+            exposedDeployments: 'wso2is-deployment'
+        - name: 'generate-deployment-properties-outputs'
+          type: SHELL
+          file: deploymentRepository/output_is.sh
+        - name: 'deploy and set test dependencies'
+          type: SHELL
+          file: deploymentRepository/is_addDependencies.sh
+scenarioConfigs:
+  - testType: TESTNG
+    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteBranch: "product-scenarios"
+    name: "2-single-sign-on"
+    description: "2-single-sign-on"
+    file: product-scenarios/test.sh
+    inputParameters:
+      RemoteProductDir: "/usr/lib/wso2/wso2is/5.7.0/wso2is-5.7.0"
