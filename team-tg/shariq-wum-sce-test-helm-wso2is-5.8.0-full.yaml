@@ -40,7 +40,7 @@ deploymentConfig:
           file: deploymentRepository/is_addDependencies.sh
 scenarioConfigs:
   - testType: TESTNG
-    remoteRepository: "https://github.com/wso2/product-is.git"
+    remoteRepository: "https://github.com/msmshariq/product-is.git"
     remoteBranch: "product-scenarios"
     name: "2-single-sign-on"
     description: "2-single-sign-on"
