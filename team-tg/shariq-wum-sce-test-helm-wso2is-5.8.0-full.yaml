@@ -7,7 +7,7 @@ infrastructureConfig:
   containerOrchestrationEngine: None
   includes:
     - CentOS-7.5
-    - Postgres-9.4
+    - MySQL-5.7
     - ADOPT_OPEN_JDK8
   provisioners:
     - name: kubernetes woring environment
