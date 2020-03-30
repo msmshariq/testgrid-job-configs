@@ -11,7 +11,7 @@ infrastructureConfig:
   includes:
     - CentOS-7.5
     - OracleJDK-8
-    - Oracle-SE2-19.0
+#   - Oracle-SE2-19.0
     - MySQL-5.7
   provisioners:
     - name: dev-wso2am-intg-deployment
