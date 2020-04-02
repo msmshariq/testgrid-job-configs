@@ -35,6 +35,7 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/apim-test-integration.git"
+    remoteBranch: "2.x.x"
     name: integrationtests
     description: "integration tests"
     file: integrationtests/run-scenario.sh
