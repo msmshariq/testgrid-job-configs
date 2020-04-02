@@ -35,14 +35,13 @@ infrastructureConfig:
 scenarioConfigs:
   - testType: TESTNG
     remoteRepository: "https://github.com/wso2/apim-test-integration.git"
-    remoteBranch: "2.x.x"
     name: integrationtests
     description: "integration tests"
     file: integrationtests/run-scenario.sh
     inputParameters:
       PRODUCT_CODE: wso2am
       PRODUCT_GIT_URL: "https://github.com/wso2/product-apim"
-      PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
+#      PRODUCT_DIST_DOWNLOAD_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
       INFRA_LOCATION: workspace/testgrid"
       DEPLOYMENT_LOCATION: workspace/testgrid
       SCENARIOS_LOCATION: workspace/apim-test-integration
@@ -56,6 +55,6 @@ scenarioConfigs:
       WUM_PRODUCT_VERSION: 2.6.0
       WUM_CHANNEL: full
       PRODUCT_GIT_BRANCH: "2.x"
-      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
-      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim_2.x/lastStableBuild/mavenArtifacts/api/
+#      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
+#      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim_2.x/lastStableBuild/mavenArtifacts/api/
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
