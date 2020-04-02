@@ -53,7 +53,7 @@ scenarioConfigs:
       USE_CUSTOM_TESTNG: "FALSE"
       WUM_PRODUCT_VERSION: 2.6.0
       WUM_CHANNEL: full
-      PRODUCT_GIT_BRANCH: "2.x.x"
+      PRODUCT_GIT_BRANCH: "2.x"
       LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim/lastRelease/api/
       LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim/lastStableBuild/mavenArtifacts/api/
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
