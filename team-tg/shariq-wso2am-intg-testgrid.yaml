@@ -30,6 +30,7 @@ infrastructureConfig:
             ALBCertificateARN: "arn:aws:acm:us-east-1:809489900555:certificate/2ab5aded-5df1-4549-9f7e-91639ff6634e"
             ProductName: "wso2-apim"
             DBClass: "db.m4.large"
+            WSO2InstanceType: "t3.large"
 #            WSO2InstanceType: "t3.large"
 scenarioConfigs:
   - testType: TESTNG
@@ -54,6 +55,6 @@ scenarioConfigs:
       WUM_PRODUCT_VERSION: 2.6.0
       WUM_CHANNEL: full
       PRODUCT_GIT_BRANCH: "2.x"
-      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim/lastRelease/api/
-      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim/lastStableBuild/mavenArtifacts/api/
+      LATEST_PRODUCT_RELEASE_API: https\://wso2.org/jenkins/job/products/job/product-apim_2.x/lastRelease/api/
+      LATEST_PRODUCT_BUILD_ARTIFACTS_API: https://wso2.org/jenkins/job/products/job/product-apim_2.x/lastStableBuild/mavenArtifacts/api/
       keyFileLocation: "/testgrid/testgrid-home/testgrid-key.pem"
